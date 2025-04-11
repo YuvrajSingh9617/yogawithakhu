@@ -2,6 +2,7 @@
 import Image from "next/image";
 import React, { useState } from "react";
 import { FaImage } from "react-icons/fa";
+import { ImSpinner8 } from "react-icons/im"; // Spinner icon
 
 const galleryImages = [
     "/gallery/1.webp",
@@ -17,9 +18,11 @@ const galleryImages = [
 
 const GallerySection = () => {
     const [selectedIndex, setSelectedIndex] = useState(null);
+    const [loading, setLoading] = useState(false);
 
     const handleNext = (e) => {
         e.stopPropagation();
+        setLoading(true);
         setSelectedIndex((prev) =>
             prev !== null ? (prev + 1) % galleryImages.length : null
         );
@@ -27,11 +30,16 @@ const GallerySection = () => {
 
     const handlePrev = (e) => {
         e.stopPropagation();
+        setLoading(true);
         setSelectedIndex((prev) =>
             prev !== null ? (prev - 1 + galleryImages.length) % galleryImages.length : null
         );
     };
 
+    const handleImageClick = (index) => {
+        setLoading(true);
+        setSelectedIndex(index);
+    };
 
     return (
         <section id="gallery" className="bg-gradient-to-r from-yellow-500 to-orange-500 w-full py-12 relative">
@@ -41,7 +49,7 @@ const GallerySection = () => {
                         <div
                             key={index}
                             className="relative group cursor-pointer aspect-square overflow-hidden"
-                            onClick={() => setSelectedIndex(index)}
+                            onClick={() => handleImageClick(index)}
                         >
                             <Image
                                 src={src}
@@ -64,14 +72,21 @@ const GallerySection = () => {
                     onClick={() => setSelectedIndex(null)}
                 >
                     <div className="relative max-w-3xl w-full mx-4">
+                        {loading && (
+                            <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 z-10">
+                                <ImSpinner8 className="text-white text-4xl animate-spin" />
+                            </div>
+                        )}
+
                         <Image
                             src={galleryImages[selectedIndex]}
                             alt={`Selected Image ${selectedIndex + 1}`}
                             width={1200}
                             height={800}
                             className="w-full h-auto rounded-lg"
-                            priority 
+                            priority
                             quality={75}
+                            onLoadingComplete={() => setLoading(false)}
                         />
 
                         {/* Close */}
@@ -80,7 +95,7 @@ const GallerySection = () => {
                                 e.stopPropagation();
                                 setSelectedIndex(null);
                             }}
-                            className="absolute top-2 right-2 text-white bg-gray-800 hover:bg-gray-600 rounded-full p-2"
+                            className="absolute top-2 right-2 text-white bg-gray-800 hover:bg-gray-600 rounded-full p-2 z-20"
                         >
                             ✕
                         </button>
@@ -88,7 +103,7 @@ const GallerySection = () => {
                         {/* Prev */}
                         <button
                             onClick={handlePrev}
-                            className="absolute top-1/2 left-2 -translate-y-1/2 bg-white text-black p-2 rounded-full hover:bg-gray-300"
+                            className="absolute top-1/2 left-2 -translate-y-1/2 bg-white text-black p-2 rounded-full hover:bg-gray-300 z-20"
                         >
                             ◀
                         </button>
@@ -96,7 +111,7 @@ const GallerySection = () => {
                         {/* Next */}
                         <button
                             onClick={handleNext}
-                            className="absolute top-1/2 right-2 -translate-y-1/2 bg-white text-black p-2 rounded-full hover:bg-gray-300"
+                            className="absolute top-1/2 right-2 -translate-y-1/2 bg-white text-black p-2 rounded-full hover:bg-gray-300 z-20"
                         >
                             ▶
                         </button>
