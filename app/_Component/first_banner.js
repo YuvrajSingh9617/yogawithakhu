@@ -16,9 +16,9 @@ const First_Banner = () => {
       <div className="container mx-auto px-6 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 items-center h-full">
           <div className="text-white animate-fadeInUp">
-            <span className="text-yellow-500 text-lg inline-block mb-2 text-[24px] text-opacity-90 font-reenie">
+            <h1 className="text-yellow-500 text-lg inline-block mb-2 text-[24px] text-opacity-90 font-reenie">
               Welcome to Yogabest
-            </span>
+            </h1>
             <h1 className="text-4xl font-bold mt-4">Yoga Enhances Your Life</h1>
             <p className="mt-4 text-lg text-gray-300">
               Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
