@@ -70,6 +70,8 @@ const GallerySection = () => {
                             width={1200}
                             height={800}
                             className="w-full h-auto rounded-lg"
+                            priority 
+                            quality={75}
                         />
 
                         {/* Close */}

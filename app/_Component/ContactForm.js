@@ -86,6 +86,7 @@ export default function ContactSection() {
                         height={400}
                         className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg h-auto rounded-lg drop-shadow-[0_4px_6px_rgba(0,0,0,0.3)] object-cover"
                         priority
+                        quality={75}
                     />
                 </div>
 

@@ -60,7 +60,10 @@ const Navbar = () => {
       >
         <div className="container mx-auto flex justify-between items-center p-4">
           <Link href="#home" className="flex items-center space-x-2">
-            <Image src={Logo} alt="Logo" width={40} height={40} />
+            <Image src={Logo} alt="Logo" width={40} height={40} 
+             priority 
+             quality={75}
+            />
             <span
               className={`text-xl font-bold transition-all duration-300 ${scrolling ? 'text-white' : 'text-white'
                 }`}
