@@ -35,13 +35,13 @@ const Navbar = () => {
         <div className="container mx-auto text-white font-bold text-sm py-1 px-4 flex justify-end items-center max-md:justify-center">
           <div className="flex space-x-4 max-md:flex-col max-md:space-x-0 max-md:space-y-1 max-md:items-center max-md:text-center">
             <span className="flex gap-1 items-center">
-              <Link rel="preload"  crossOrigin="anonymous" href="mailto:akhileshraturi06@gmail.com" className="flex items-center gap-2 hover:no-underline">
+              <Link rel="preload" href="mailto:akhileshraturi06@gmail.com" className="flex items-center gap-2 hover:no-underline">
                 <FaEnvelope className="text-yellow-300" />
                 akhileshraturi06@gmail.com
               </Link>
             </span>
             <span className="flex gap-1 items-center">
-              <Link rel="preload"  crossOrigin="anonymous" href="tel:+918938990265" className="flex items-center gap-2 hover:no-underline">
+              <Link rel="preload" href="tel:+918938990265" className="flex items-center gap-2 hover:no-underline">
                 <FaPhoneAlt className="text-yellow-300" />
                 +91-8938990265
               </Link>
@@ -59,7 +59,7 @@ const Navbar = () => {
           }`}
       >
         <div className="container mx-auto flex justify-between items-center p-4">
-          <Link rel="preload"  crossOrigin="anonymous" href="#home" className="flex items-center space-x-2">
+          <Link rel="preload" href="#home" className="flex items-center space-x-2">
             <Image src={Logo} alt="Logo" width={40} height={40}
               priority
               quality={75}
@@ -89,7 +89,7 @@ const Navbar = () => {
             {['About', 'Services', 'Gallery', 'Contact'].map((item) => (
               <li key={item}>
                 <Link
-                  rel="preload"  crossOrigin="anonymous"
+                  rel="preload"
                   href={`#${item.toLowerCase()}`}
                   className="hover:text-gray-400 text-white transition-all duration-300"
                   onClick={() => setIsOpen(false)}
@@ -114,7 +114,7 @@ const Navbar = () => {
               {['About', 'Services', 'Gallery', 'Contact'].map((item) => (
                 <li key={item}>
                   <Link
-                    rel="preload"  crossOrigin="anonymous"
+                    rel="preload"
                     href={`#${item.toLowerCase()}`}
                     className="text-white hover:text-gray-400"
                     onClick={() => setIsOpen(false)}
