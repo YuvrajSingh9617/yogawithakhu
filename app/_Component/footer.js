@@ -27,7 +27,7 @@ const Footer = () => {
                             </Link>
                         </p>
                         <p className="flex items-center gap-2">
-                            <Link rel="preload" href="https://yogawithakhu.vercel.app" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:no-underline">
+                            <Link href="https://yogawithakhu.vercel.app" target="_blank" rel="noopener noreferrer preload" className="flex items-center gap-2 hover:no-underline">
                                 <FaGlobe className="text-yellow-300" />
                                 yogawithakhu.vercel.app
                             </Link>
