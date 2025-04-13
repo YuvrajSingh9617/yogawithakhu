@@ -12,6 +12,7 @@ export default function ContactSection() {
     });
 
     const [errors, setErrors] = useState({});
+    const [isSubmitting, setIsSubmitting] = useState(false); // Spinner state
 
     const validateField = (name, value) => {
         switch (name) {
@@ -36,7 +37,6 @@ export default function ContactSection() {
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData((prev) => ({ ...prev, [name]: value }));
-
         const error = validateField(name, value);
         setErrors((prev) => ({ ...prev, [name]: error }));
     };
@@ -48,7 +48,9 @@ export default function ContactSection() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+
         if (isFormValid()) {
+            setIsSubmitting(true);
             try {
                 const res = await fetch('/api/contact', {
                     method: 'POST',
@@ -67,12 +69,13 @@ export default function ContactSection() {
             } catch (err) {
                 alert('Server error. Please try again later.');
                 console.error(err);
+            } finally {
+                setIsSubmitting(false);
             }
         } else {
             alert('Please fix validation errors before submitting.');
         }
     };
-
 
     return (
         <section id='contact' className="bg-orange-300 flex items-center justify-center px-4 py-10 sm:px-6 lg:px-8">
@@ -132,7 +135,7 @@ export default function ContactSection() {
                                 {errors.contact && <p className="text-red-600 text-sm mt-1">{errors.contact}</p>}
                             </div>
                             <div>
-                                <label className="font-semibold ">Message :</label>
+                                <label className="font-semibold">Message :</label>
                                 <textarea
                                     name="message"
                                     placeholder="Enter Your Message..."
@@ -143,12 +146,23 @@ export default function ContactSection() {
                                 />
                                 {errors.message && <p className="text-red-600 text-sm mt-1">{errors.message}</p>}
                             </div>
+
                             <button
                                 type="submit"
-                                className="w-full bg-yellow-500 text-white px-6 py-3 rounded-md hover:opacity-90 transition"
-                                disabled={!isFormValid()}
+                                className="w-full bg-yellow-500 text-white px-6 py-3 rounded-md hover:opacity-90 transition flex justify-center items-center gap-2"
+                                disabled={!isFormValid() || isSubmitting}
                             >
-                                Submit
+                                {isSubmitting ? (
+                                    <>
+                                        <svg className="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                                            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z"></path>
+                                        </svg>
+                                        Submitting...
+                                    </>
+                                ) : (
+                                    'Submit'
+                                )}
                             </button>
                         </form>
                     </div>

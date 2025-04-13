@@ -14,7 +14,13 @@ const galleryImages = [
     "/gallery/7.webp",
     "/gallery/8.webp",
     "/gallery/9.webp",
+    "/gallery/10.webp",
+    "/gallery/11.webp",
+    "/gallery/12.webp",
+    "/gallery/13.webp",
+    "/gallery/14.webp",
 ];
+
 
 const GallerySection = () => {
     const [selectedIndex, setSelectedIndex] = useState(null);
