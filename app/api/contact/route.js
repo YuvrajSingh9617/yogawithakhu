@@ -5,21 +5,17 @@ export async function POST(req) {
     const body = await req.json();
     const { fullName, email, contact, message } = body;
 
-    if (!fullName || !email || !contact || !message) {
-      return Response.json({ success: false, error: 'Missing required fields' }, { status: 400 });
-    }
-
     const transporter = nodemailer.createTransport({
       service: 'gmail',
       auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS,
+        user: 'yuvrajsingh019990@gmail.com',           // <-- replace with your Gmail
+        pass: 'qclgtzpqjafogpto',    // <-- replace with your App Password
       },
     });
 
     const mailOptions = {
-      from: `"Contact Form" <${process.env.EMAIL_USER}>`,
-      to: 'akhileshraturi06@gmail.com', // Replace with your receiving email
+      from: '"Contact Form" <yuvrajsingh019990@gmail.com>',
+      to: 'akhileshraturi06@gmail.com',
       subject: 'New Contact Form Submission',
       html: `
         <h3>New Contact Form Submission</h3>
@@ -31,7 +27,6 @@ export async function POST(req) {
     };
 
     await transporter.sendMail(mailOptions);
-
     return Response.json({ success: true });
   } catch (error) {
     console.error('Error sending email:', error);
