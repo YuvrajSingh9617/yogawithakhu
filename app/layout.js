@@ -15,9 +15,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Personal Yoga Classes – Online & Offline | Certified Yoga Instructor",
+  title: "Personal Yoga Classes in Salt Lake, Kolkata – Online & Offline | Certified Yoga Instructor",
   description:
-    "Join personalized yoga classes with a certified instructor. Available both online and offline. Improve flexibility, strength, and mindfulness at your convenience.",
+    "Join personalized yoga classes in Salt Lake, Kolkata with a certified instructor. Available both online and offline. Enhance your flexibility, strength, and mindfulness with sessions at your convenience.",
   keywords: [
     "Yoga Classes",
     "Online Yoga",
@@ -28,33 +28,36 @@ export const metadata = {
     "Live Yoga Online",
     "Yoga for Beginners",
     "Advanced Yoga",
-    "Private Yoga Sessions"
+    "Private Yoga Sessions",
+    "Yoga in Salt Lake Kolkata",
+    "Kolkata Yoga Instructor",
+    "Personal Yoga Trainer Salt Lake"
   ],
   openGraph: {
-    title: "Personal Yoga Classes – Online & Offline",
+    title: "Personal Yoga Classes in Salt Lake, Kolkata – Online & Offline",
     description:
-      "Transform your health with online and offline yoga classes tailored to your needs. Book your personal yoga trainer today.",
-    url: "https://yogawithakhu.vercel.app", // replace with your actual Vercel URL
+      "Transform your health with yoga classes in Salt Lake, Kolkata — available online and offline. Tailored personal yoga sessions by a certified trainer. Book now!",
+    url: "https://yogawithakhu.vercel.app",
     type: "website",
     images: [
       {
-        url: "https://yogawithakhu.vercel.app/logo/logo.webp", // replace with your actual image path
+        url: "https://yogawithakhu.vercel.app/logo/logo.webp",
         width: 1200,
         height: 630,
-        alt: "Personal Yoga Class – Online and Offline"
+        alt: "Yoga with Akhu – Personal Yoga Class in Salt Lake Kolkata"
       }
     ]
   },
   twitter: {
     card: "summary_large_image",
-    title: "Personal Yoga Classes – Online & Offline",
+    title: "Personal Yoga Classes in Salt Lake, Kolkata – Online & Offline",
     description:
-      "Get fit and find inner peace with personal yoga sessions – available online and offline. Schedule your class today.",
+      "Get fit and find inner peace with personal yoga sessions in Salt Lake, Kolkata – available online and offline. Schedule your class today.",
     images: ["https://yogawithakhu.vercel.app/logo/logo.webp"]
   },
   metadataBase: new URL("https://yogawithakhu.vercel.app"), // base Vercel URL
   alternates: {
-    canonical: "https://yogawithakhu.vercel.app", // canonical link for SEO
+    canonical: "https://yogawithakhu.vercel.app",
   },
 };
 
