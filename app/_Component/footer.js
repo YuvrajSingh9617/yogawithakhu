@@ -7,6 +7,7 @@ import Logo from '@/public/logo/logo.webp';
 const Footer = () => {
     return (
         <footer className="bg-gradient-to-r from-yellow-500 to-orange-500 w-full text-white py-10">
+            {/* Upper Section */}
             <div className="container mx-auto px-5 grid grid-cols-1 md:grid-cols-3 gap-8">
 
                 {/* Left Section */}
