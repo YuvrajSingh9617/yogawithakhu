@@ -60,7 +60,7 @@ const Navbar = () => {
       >
         <div className="container mx-auto flex justify-between items-center p-4">
           <Link rel="preload" href="#home" className="flex items-center space-x-2">
-            <Image src={Logo} alt="Logo" width={40} height={40}
+            <Image src={Logo} alt="Logo" width={50} height={50}
               priority
               quality={75}
             />
