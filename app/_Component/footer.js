@@ -81,7 +81,7 @@ const Footer = () => {
             </div>
 
             {/* Bottom Section */}
-            <div className="mt-10 border-t border-gray-700 pt-5 text-center text-white text-sm">
+            <div className="mt-10 border-t-2 border-gray-400 pt-5 text-center text-white text-sm">
                 <p>&copy; 2025 Yoga Center. All Rights Reserved</p>
                 <p className="mt-1">
                     Developed by{" "}
