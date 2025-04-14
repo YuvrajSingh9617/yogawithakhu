@@ -149,7 +149,7 @@ export default function ContactSection() {
 
                             <button
                                 type="submit"
-                                className="w-full bg-yellow-500 text-white px-6 py-3 rounded-md hover:opacity-90 transition flex justify-center items-center gap-2"
+                                className="w-full bg-yellow-500 text-white px-6 py-3 rounded-md hover:opacity-90 transition flex justify-center items-center gap-2 cursor-pointer"
                                 disabled={!isFormValid() || isSubmitting}
                             >
                                 {isSubmitting ? (
