@@ -1,4 +1,4 @@
-import { FaPhoneAlt, FaEnvelope, FaGlobe } from "react-icons/fa";
+import { FaLocationArrow, FaPhoneAlt, FaEnvelope, FaGlobe } from "react-icons/fa";
 import Link from 'next/link';
 import Image from 'next/image';
 import Logo from '@/public/logo/logo.webp';
@@ -51,25 +51,27 @@ const Footer = () => {
                 {/* Right Section */}
                 <div className="text-center md:text-left">
                     <h3 className="text-lg font-semibold text-gray-300">Our Location</h3>
-                    <p className="mt-2">
+                    <p className="mt-2 flex items-center gap-2">
+                        <FaLocationArrow
+                            className="md:text-yellow-300 text-orange-500" />
                         125, AJ Block, Sector II, Bidhannagar, Kolkata, West Bengal 700136
                     </p>
                     <div className="mt-4 space-y-2">
                         <p className="flex items-center justify-center md:justify-start gap-2">
                             <Link rel="preload" href="tel:+918938990265" className="flex items-center gap-2 hover:no-underline">
-                                <FaPhoneAlt className="text-yellow-300" />
+                                <FaPhoneAlt className="md:text-yellow-300 text-orange-500" />
                                 +91-8938990265
                             </Link>
                         </p>
                         <p className="flex items-center justify-center md:justify-start gap-2">
                             <Link rel="preload" href="mailto:akhileshraturi06@gmail.com" className="flex items-center gap-2 hover:no-underline">
-                                <FaEnvelope className="text-yellow-300" />
+                                <FaEnvelope className="md:text-yellow-300 text-orange-500" />
                                 akhileshraturi06@gmail.com
                             </Link>
                         </p>
                         <p className="flex items-center justify-center md:justify-start gap-2">
                             <Link href="https://yogawithakhu.vercel.app" target="_blank" rel="noopener noreferrer preload" className="flex items-center gap-2 hover:no-underline">
-                                <FaGlobe className="text-yellow-300" />
+                                <FaGlobe className="md:text-yellow-300 text-orange-500" />
                                 yogawithakhu.vercel.app
                             </Link>
                         </p>
