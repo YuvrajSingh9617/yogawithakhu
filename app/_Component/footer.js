@@ -54,25 +54,25 @@ const Footer = () => {
                     <h3 className="text-lg font-semibold text-gray-300">Our Location</h3>
                     <p className="mt-2 flex items-center gap-2">
                         <FaLocationArrow
-                            className="md:text-yellow-300 text-orange-500" />
+                            className="md:text-yellow-300 text-white" />
                         125, AJ Block, Sector II, Bidhannagar, Kolkata, West Bengal 700136
                     </p>
                     <div className="mt-4 space-y-2">
                         <p className="flex items-center justify-center md:justify-start gap-2">
                             <Link rel="preload" href="tel:+918938990265" className="flex items-center gap-2 hover:no-underline">
-                                <FaPhoneAlt className="md:text-yellow-300 text-orange-500" />
+                                <FaPhoneAlt className="md:text-yellow-300 text-white" />
                                 +91-8938990265
                             </Link>
                         </p>
                         <p className="flex items-center justify-center md:justify-start gap-2">
                             <Link rel="preload" href="mailto:akhileshraturi06@gmail.com" className="flex items-center gap-2 hover:no-underline">
-                                <FaEnvelope className="md:text-yellow-300 text-orange-500" />
+                                <FaEnvelope className="md:text-yellow-300 text-white" />
                                 akhileshraturi06@gmail.com
                             </Link>
                         </p>
                         <p className="flex items-center justify-center md:justify-start gap-2">
                             <Link href="https://yogawithakhu.vercel.app" target="_blank" rel="noopener noreferrer preload" className="flex items-center gap-2 hover:no-underline">
-                                <FaGlobe className="md:text-yellow-300 text-orange-500" />
+                                <FaGlobe className="md:text-yellow-300 text-white" />
                                 yogawithakhu.vercel.app
                             </Link>
                         </p>
